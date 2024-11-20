@@ -1,0 +1,16 @@
+streamlit
+watchdog
+diffusers
+torch
+torchvision
+einops
+huggingface_hub[hf_transfer]
+safetensors
+sentencepiece
+transformers
+tokenizers
+protobuf
+requests
+invisible-watermark
+accelerate
+peft
