@@ -19,10 +19,10 @@ with col4:
     num_inference_steps = streamlit.number_input("Steps:", min_value=1, value=3)
 
 if streamlit.button("Load Model"):
-    snapshot_download(repo_id="black-forest-labs/FLUX.1-dev", cache_dir="./FLUX_1_dev")
+    snapshot_download(repo_id="black-forest-labs/FLUX.1-Kontext-dev", cache_dir="./FLUX_1_dev")
 
 if streamlit.button("Generate Image"):
-    pipe = FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16, cache_dir="./FLUX_1_dev")
+    pipe = FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-Kontext-dev", torch_dtype=torch.bfloat16, cache_dir="./FLUX_1_dev")
     images = pipe(prompt=prompt, num_inference_steps=num_inference_steps, height=num_height, width=num_width, num_images_per_prompt=num_images).images
     cols = streamlit.columns(3)
     for i, image in enumerate(images):
